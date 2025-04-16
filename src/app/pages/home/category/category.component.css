@@ -2,25 +2,25 @@
     background-image: url('../../../../assets/images/categories/c1.jpg');  
 }
 .category-section .bg2{
-    background-image: url('/assets/images/categories/c2.jpg');  
+    background-image: url('../../../../assets/images/categories/c2.jpg');  
 }
 .category-section .bg3{
-    background-image: url('/assets/images/categories/c3.jpg');  
+    background-image: url('../../../../assets/images/categories/c3.jpg');  
 }
 .category-section .bg4{
-    background-image: url('/assets/images/categories/c4.jpg');  
+    background-image: url('../../../../assets/images/categories/c4.jpg');  
 }
 .category-section .bg5{
-    background-image: url('/assets/images/categories/c5.jpg');  
+    background-image: url('../../../../assets/images/categories/c5.jpg');  
 }
 .category-section .bg6{
-    background-image: url('/assets/images/categories/c6.jpg');  
+    background-image: url('../../../../assets/images/categories/c6.jpg');  
 }
 .category-section .bg7{
-    background-image: url('/assets/images/categories/c7.jpg');  
+    background-image: url('../../../../assets/images/categories/c7.jpg');  
 }
 .category-section .bg8{
-    background-image: url('/assets/images/categories/c8.jpg');  
+    background-image: url('../../../../assets/images/categories/c8.jpg');  
 }
 .category-section .c-parent .c{
     transition: all .5s ease-in-out;
