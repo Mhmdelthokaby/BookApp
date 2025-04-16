@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+*{
+    font-family: "Cairo", sans-serif;
+}
+.mainTextColor{
+    color: rgb(241, 142, 125) !important;
+}
+.mainBgColor{
+    background-color: rgb(241, 142, 125) !important;
+}
+.mainBorderColor{
+    border-color: rgb(241, 142, 125) !important;
+}
+

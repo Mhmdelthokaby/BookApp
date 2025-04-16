@@ -1,0 +1,31 @@
+<section class="last-books-sec vstack gap-3 py-4">
+    <div class="text-center lead">
+        <h2 class="py-2 fs-1"><span class="border-3 border-bottom mainBorderColor">استعرض اخر الكتب</span> </h2>
+        <p>القراءة تُساعدك على تطوير مهارات التواصل لديك</p>
+    </div>
+    <div>
+      <div class="container">
+        <div *ngIf="isLoading" class="text-center">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      
+        <div *ngIf="!isLoading" class="row flex-row-reverse row-cols-lg-4 row-cols-md-2 row-cols-sm-1 g-4">
+          <!-- Book Loop -->
+          <div *ngFor="let book of latestBooks" class="col item text-end">
+            <img [src]="book.Image || 'assets/images/default-book.jpg'" 
+                 [alt]="book.BookName" 
+                 class="rounded-start-4 shadow bg-body-tertiary" 
+                 width="250" 
+                 height="350" />
+            <p class="text-muted small mt-2 mb-1">{{ book.Category || 'غير مصنف' }}</p>
+            <h5 class="">{{ book.BookName }}</h5>
+            <p class="text-muted">{{ book.AuthorName || 'مؤلف غير معروف' }}</p>
+            <a [href]="book.YoutubeLink" *ngIf="book.YoutubeLink" class="text-danger fw-bold text-decoration-none">Youtube</a>
+          </div>
+        </div>
+      </div>
+          
+    </div>
+</section>

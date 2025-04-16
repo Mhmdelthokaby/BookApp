@@ -1,0 +1,50 @@
+<section class="my-5 py-3">
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-6 border border-2 rounded-4 p-5 bg-body-tertiary">
+          <div class="register-container">
+            <h2 class="mb-4">Register</h2>
+            <img src="assets/images/logo.png" alt="Logo" class="mb-4" />
+  
+            <form (ngSubmit)="onRegister()">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  [(ngModel)]="email"
+                  name="email"
+                  required
+                />
+                <div id="emailHelp" class="form-text">
+                  We'll never share your email with anyone else.
+                </div>
+              </div>
+  
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  [(ngModel)]="password"
+                  name="password"
+                  required
+                />
+              </div>
+  
+              <div *ngIf="errorMessage" class="alert alert-danger">
+                {{ errorMessage }}
+              </div>
+  
+              <button type="submit" class="btn mainBgColor text-white w-50">
+                Register
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

@@ -1,0 +1,94 @@
+<section class="my-5 py-5 vstack gap-3">
+    <section class="container">
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped align-middle">
+            <thead class="table-dark">
+              <tr>
+                <th>#</th>
+                <th>Image</th>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>URL</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let book of books; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td><img [src]="book.Image" alt="Book Image" width="60"></td>
+                <td>{{ book.BookName }}</td>
+                <td>{{ book.AuthorName }}</td>
+                <td>{{ book.Category }}</td>
+                <td>{{ book.Description | slice:0:100 }}...</td>
+                <td><a [href]="book.URL" target="_blank">Open</a></td>
+                <td>
+                  <button class="btn btn-sm btn-outline-warning me-2" (click)="editBook(book)"><i class="fa-solid fa-pen-to-square"></i></button>
+                  <button class="btn btn-sm btn-outline-danger" (click)="deleteBook(book.id)"><i class="fa-solid fa-trash"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    
+    <section class="container">
+        <div class="card p-4 shadow">
+          <h2 class="mb-4 text-center">Add New Book</h2>
+          <form (ngSubmit)="addBook()" #bookForm="ngForm">
+      
+            <div class="mb-3">
+              <label for="bookName" class="form-label">Book Name</label>
+              <input type="text" id="bookName" name="BookName" [(ngModel)]="newBook.BookName" class="form-control" required>
+            </div>
+      
+            <div class="mb-3">
+              <label for="authorName" class="form-label">Author Name</label>
+              <input type="text" id="authorName" name="AuthorName" [(ngModel)]="newBook.AuthorName" class="form-control" required>
+            </div>
+      
+            <div class="mb-3">
+                <label for="imageFile" class="form-label">Upload Book Image</label>
+                <input type="file" id="imageFile" (change)="onImageSelected($event)" class="form-control" accept="image/*">
+              </div>
+              
+      
+            <div class="mb-3">
+              <label for="url" class="form-label">Book File URL</label>
+              <input type="text" id="url" name="URL" [(ngModel)]="newBook.URL" class="form-control" required>
+            </div>
+      
+            <div class="mb-3">
+              <label for="youtube" class="form-label">YouTube Link</label>
+              <input type="text" id="youtube" name="YoutubeLink" [(ngModel)]="newBook.YoutubeLink" class="form-control">
+            </div>
+      
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea id="description" name="Description" [(ngModel)]="newBook.Description" class="form-control" rows="3"></textarea>
+            </div>
+      
+            <div class="mb-3">
+              <label for="category" class="form-label">Category</label>
+              <select id="category" name="Category" [(ngModel)]="newBook.Category" class="form-select" required>
+                <option *ngFor="let category of bookCategories" [value]="category">{{ category }}</option>
+              </select>
+            </div>
+      
+            <div class="text-center">
+                <button type="submit" class="btn btn-outline-success w-50">
+                  {{ editingBookId ? 'Update Book' : 'Add Book' }}
+                </button>
+              
+                <button *ngIf="editingBookId" type="button" class="btn btn-secondary ms-2" (click)="resetForm()">
+                  Cancel
+                </button>
+              </div>
+
+          </form>
+        </div>
+      </section>
+      
+      
+</section>

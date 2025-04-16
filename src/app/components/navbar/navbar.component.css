@@ -1,0 +1,10 @@
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.activeBorder{
+    border-top: 1px rgb(241, 142, 125) solid !important;
+}
+.nav-link:hover{
+    color: rgb(241, 142, 125) !important;
+    border-top: 1px rgb(241, 142, 125) solid !important;
+}

@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg fixed-top bg-white">
+  <div class="container-fluid px-5">
+    <a class="navbar-brand" href="#">
+      <img class="w-25" [src]="logoUrl" alt="Knowlege-Vision" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav flex-lg-row-reverse ms-auto mb-2 mb-lg-0 fw-light">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="mainTextColor fw-medium activeBorder" [routerLinkActiveOptions]="{ exact: true }">الرئيسية</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="mainTextColor fw-medium activeBorder">من نحن</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/atlas" routerLinkActive="mainTextColor fw-medium activeBorder">أطالس</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/extracts" routerLinkActive="mainTextColor fw-medium activeBorder">مستخلصات</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dictionaries" routerLinkActive="mainTextColor fw-medium activeBorder">معاجم</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/encyclopedias" routerLinkActive="mainTextColor fw-medium activeBorder">موسوعات</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/biography" routerLinkActive="mainTextColor fw-medium activeBorder">بيلوجراف</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/translations" routerLinkActive="mainTextColor fw-medium activeBorder">تراجم</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/yearbooks" routerLinkActive="mainTextColor fw-medium activeBorder">الكتب السنوية</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/guidance-notes" routerLinkActive="mainTextColor fw-medium activeBorder">موجزات ارشادية</a>
+        </li>
+      </ul>
+      
+    </div>
+  </div>
+</nav>

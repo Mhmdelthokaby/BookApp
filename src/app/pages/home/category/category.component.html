@@ -1,0 +1,30 @@
+<section class="category-section py-5 my-2 vstack gap-3">
+
+    <div class="text-center vstack gap-3">
+      <h2 class="lead fs-1"><span class="border-5 border-bottom mainBorderColor">اكتشف أنواع الكتب</span></h2>
+      <p>نُقدّم لك مجموعة متكاملة من تصنيفات الكتب لتنظيم تجربة قراءتك</p>
+    </div>
+    <div class="container overflow-hidden position-relative">
+      <div class="d-flex transition px-2" [style.transform]="'translateX(-' + currentTranslate + '%)'">
+        <div
+          *ngFor="let item of duplicatedItems"
+          class="flex-shrink-0 mx-2 overflow-hidden item"
+          [style.flex]="'0 0 ' + (100 / visibleItems) + '%'">
+          
+          <a [routerLink]="item.link" class="text-decoration-none overflow-hidden">
+            <div class="c-parent rounded-3 overflow-hidden">
+              <div class="c text-center overflow-hidden" [ngClass]="item.background">
+                <div class="bg-dark bg-opacity-10">
+                  <div class="p-5 vstack gap-2">
+                    <h2 class="text-white fw-bold ">{{ item.title }}</h2>
+                    <h3 class="text-white btn mainBgColor">استكشف الان</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+</section>
+  
