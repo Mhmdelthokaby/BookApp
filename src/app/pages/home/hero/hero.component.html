@@ -1,77 +1,3 @@
-<section class="hero-section">
-    <div class="p-0 m-0 vh-100 d-flex align-items-center w-100 bg-body-tertiary">
-        <div id="carouselExampleSlidesOnly" class="carousel slide w-100" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active ">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-5 col-sm-12">
-                                <img class="w-100" src="assets/images/hs6.png" alt="">
-                            </div>
-                            <!--  -->
-                            <div class="col-lg-7 col-sm-12 d-flex justify-content-center align-items-lg-end align-items-center flex-column text-lg-end text-sm-center">
-                                
-                                <h6 class="text-uppercase bg-white py-2 px-4 rounded-3 fw-medium h6 lead text-center">
-                                    الدليل المرجعي للمصادر المرئية</h6>
-
-                                <p class="display-5 fw-bold lead"><span class="mainTextColor">الكتاب</span> صديق لا
-                                    يخون</p>
-                                <p class="text-dark lead">الكتبُ عوالمٌ لا تنتهي، نقرأها فنعيش ألف حياة</p>
-                                <button class="btn mainBgColor text-white px-5 py-2 fs-4 ">اقرأ الان</button>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>  
-                <!--  -->
-                <div class="carousel-item ">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-5 col-sm-12">
-                                <img class="w-100" src="assets/images/hs6.png" alt="">
-                            </div>
-                            <!--  -->
-                            <div class="col-lg-7 col-sm-12 d-flex justify-content-center align-items-lg-end align-items-center flex-column text-lg-end text-sm-center">
-                                
-                                <h6 class="text-uppercase bg-white py-2 px-4 rounded-3 fw-medium h6 lead text-center">
-                                    Knowledge Vision</h6>
-
-                                <p class="display-5 fw-bold lead"><span class="mainTextColor">الكتبُ</span> نوافذُ على العوالم</p>
-                                <p class="text-dark lead">بين دفّتي كل كتاب، روح كاتب لا تموت</p>
-                                <button class="btn mainBgColor text-white px-5 py-2 fs-4 ">اقرأ الان</button>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-
-                <!--  -->
-                <div class="carousel-item ">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-5 col-sm-12">
-                                <img class="w-100" src="assets/images/hs1.png" alt="">
-                            </div>
-                            <!--  -->
-                            <div class="col-lg-7 col-sm-12 d-flex justify-content-center align-items-lg-end align-items-center flex-column text-lg-end text-sm-center">
-                                
-                                <h6 class="text-uppercase bg-white py-2 px-4 rounded-3 fw-medium h6 lead text-center">
-                                    Knowledge Vision</h6>
-
-                                <p class="display-5 fw-bold lead"><span class="mainTextColor">المعرفةُ</span> تصنعُ الإنسانَ الحر</p>
-                                <p class="text-dark lead">في عالم يمضي بسرعة، نمنحك لحظة مع الحرف الهادئ</p>
-                                <button class="btn mainBgColor text-white px-5 py-2 fs-4 ">اقرأ الان</button>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
 <section>
     <div class="p-0 m-0 vh-100 d-flex align-items-center w-100 bg-body-tertiary">
       <div id="carouselExampleSlidesOnly" class="carousel slide w-100" data-bs-ride="carousel">
@@ -86,16 +12,20 @@
                 <div class="col-lg-5 col-sm-12">
                   <img class="w-100" [src]="slide.imgs" alt="">
                 </div>
-                <div class="col-lg-7 col-sm-12 d-flex justify-content-center align-items-lg-end align-items-center flex-column text-lg-end text-sm-center">
-                  <h6 class="text-uppercase bg-white py-2 px-4 rounded-3 fw-medium h6 lead text-center">
+                <div class="col-lg-7 col-sm-12 d-flex justify-content-center align-items-lg-end align-items-center flex-column text-lg-end text-sm-center vstack gap-3">
+                  <h6 class="text-uppercase bg-white py-2 px-4 rounded-3 fw-light h6 lead text-center">
                     {{ slide.title }}
                   </h6>
-                  <p class="display-5 fw-bold lead">
+                  <p class="display-5 fw-normal lead text-center text-lg-end">
                     <span class="mainTextColor">{{ slide.sub2 }}</span>
                     {{slide.subtitle}}
                   </p>
-                  <p class="text-dark lead">{{ slide.text }}</p>
-                  <button class="btn mainBgColor text-white px-5 py-2 fs-4">اقرأ الان</button>
+                  <p class="text-dark lead text-center text-lg-end">{{ slide.text }}</p>
+                  <div class="d-flex flex-row w-100 bg-white rounded-2 overflow-hidden">
+                    <button (click)="onSearch()" class="btn w-25 mainBgColor text-white rounded-0 py-2">اقرأ الان</button>
+                    <input [(ngModel)]="searchQuery"  type="text" placeholder="ادخل اسم الكتاب" class="rounded-0 text-end form-control border-0 w-75">
+                    
+                  </div>
                 </div>
               </div>
             </div>
@@ -103,5 +33,40 @@
         </div>
       </div>
     </div>
-  </section>
+</section>
+
+<section *ngIf="searchedBooks.length > 0" class="search-books-sec vstack gap-3 py-4">
+  <div class="text-center lead">
+    <h2 class="py-2 fs-1"><span class="border-3 border-bottom mainBorderColor">نتائج البحث</span></h2>
+    <p>عرض الكتب التي تطابق البحث</p>
+  </div>
+
+  <div class="container">
+    <div *ngIf="isSearching" class="text-center">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <div *ngIf="!isSearching" class="row flex-row-reverse row-cols-lg-4 row-cols-md-2 row-cols-sm-1 g-4">
+      <div *ngFor="let book of searchedBooks" class="col item text-lg-end text-center">
+        <a [href]="book.URL">
+          <img [src]="book.Image || 'assets/images/default-book.jpg'" 
+             [alt]="book.BookName" 
+             class="rounded-start-4 shadow bg-body-tertiary" 
+             width="250" 
+             height="350" />
+        </a>
+        <p class="text-muted small mt-2 mb-1">{{ book.Category || 'غير مصنف' }}</p>
+        <a [href]="book.URL" class="text-decoration-none">
+          <h5 class="">{{ book.BookName }}</h5>
+
+        </a>
+        <p class="text-muted">{{ book.AuthorName || 'مؤلف غير معروف' }}</p>
+        <a [href]="book.YoutubeLink" *ngIf="book.YoutubeLink" class="text-danger fw-bold text-decoration-none">Visual Form</a>
+      </div>
+    </div>
+  </div>
+</section>
+
   

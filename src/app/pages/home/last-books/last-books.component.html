@@ -13,16 +13,18 @@
       
         <div *ngIf="!isLoading" class="row flex-row-reverse row-cols-lg-4 row-cols-md-2 row-cols-sm-1 g-4">
           <!-- Book Loop -->
-          <div *ngFor="let book of latestBooks" class="col item text-end">
-            <img [src]="book.Image || 'assets/images/default-book.jpg'" 
+          <div *ngFor="let book of latestBooks" class="col item text-lg-end text-center">
+            <a [href]="book.URL">
+              <img [src]="book.Image || 'assets/images/default-book.jpg'" 
                  [alt]="book.BookName" 
                  class="rounded-start-4 shadow bg-body-tertiary" 
                  width="250" 
                  height="350" />
+            </a>
             <p class="text-muted small mt-2 mb-1">{{ book.Category || 'غير مصنف' }}</p>
-            <h5 class="">{{ book.BookName }}</h5>
+            <a [href]="book.URL" class="text-decoration-none"><h5 class="">{{ book.BookName }}</h5></a>
             <p class="text-muted">{{ book.AuthorName || 'مؤلف غير معروف' }}</p>
-            <a [href]="book.YoutubeLink" *ngIf="book.YoutubeLink" class="text-danger fw-bold text-decoration-none">Youtube</a>
+            <a [href]="book.YoutubeLink" *ngIf="book.YoutubeLink" class="text-danger fw-bold text-decoration-none">Visual Form</a>
           </div>
         </div>
       </div>

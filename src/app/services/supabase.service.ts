@@ -143,5 +143,20 @@ export class SupabaseService {
   
     return true;
   }
+  // 🔹 Search books by title or author
+  async searchBooks(query: string): Promise<Book[]> {
+    const { data, error } = await this.supabase
+      .from('books')
+      .select('*')
+      .or(`BookName.ilike.%${query}%,AuthorName.ilike.%${query}%`);      
   
+    if (error) {
+      console.error('Error searching books:', error);
+      return [];
+    }
+  
+    return data as Book[];
+  }
+  
+
 }

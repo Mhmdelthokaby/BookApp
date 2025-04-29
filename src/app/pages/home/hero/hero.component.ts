@@ -1,4 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { SupabaseService } from '../../../services/supabase.service';
+import { Book } from '../../../models/book';
 
 @Component({
   selector: 'app-hero',
@@ -38,4 +40,24 @@ export class HeroComponent  {
     }
 
   ];
+
+
+  searchedBooks: Book[] = [];
+  isSearching = false;
+  searchQuery = '';
+
+
+  constructor(private supabaseService: SupabaseService) {}
+
+  onSearch() {
+    if (!this.searchQuery.trim()) return;
+  
+    this.isSearching = true;
+    this.supabaseService.searchBooks(this.searchQuery).then(results => {
+      this.searchedBooks = results;
+      this.isSearching = false;
+    });
+  }
+  
+
 }
