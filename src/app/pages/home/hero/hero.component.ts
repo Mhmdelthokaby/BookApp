@@ -16,5 +16,30 @@ import * as core from '@angular/core';
 })
 
 export class HeroComponent  {
-  
+  slides: {
+    imgs: string;
+    title: string;
+    subtitle: string;
+    text: string;
+  }[] = [
+    {
+      imgs: 'assets/images/hs6.png',
+      title: 'ssss',
+      subtitle: 'dddddssddddd',
+      text: 'dddddddd'
+    },
+    {
+      imgs: 'assets/images/hs2.png',
+      title: 'f',
+      subtitle: 'dddddssddddd',
+      text: 'dddddddd'
+    },
+    {
+      imgs: 'assets/images/hs1.png',
+      title: 'a',
+      subtitle: 'dddddssddddd',
+      text: 'dddffffddddd'
+    }
+
+  ];
 }
