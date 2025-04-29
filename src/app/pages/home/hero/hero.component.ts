@@ -1,12 +1,4 @@
 import { AfterViewInit, Component } from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  transition,
-  animate,
-} from '@angular/animations';
-import * as core from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -20,25 +12,29 @@ export class HeroComponent  {
     imgs: string;
     title: string;
     subtitle: string;
+    sub2:string;
     text: string;
   }[] = [
     {
       imgs: 'assets/images/hs6.png',
-      title: 'ssss',
-      subtitle: 'dddddssddddd',
-      text: 'dddddddd'
-    },
-    {
-      imgs: 'assets/images/hs2.png',
-      title: 'f',
-      subtitle: 'dddddssddddd',
-      text: 'dddddddd'
+      title: 'الدليل المرجعي للمصادر المرئية',
+      subtitle: ' الأول للمعرفة استكشف، تعلم، تميز',
+      sub2:"مرجعك",
+      text: 'في عالم يمضي بسرعة، نمنحك لحظة مع الحرف الهادئ'
     },
     {
       imgs: 'assets/images/hs1.png',
-      title: 'a',
-      subtitle: 'dddddssddddd',
-      text: 'dddffffddddd'
+      title: 'الدليل المرجعي للمصادر المرئية',
+      subtitle: ' موثوقة لباحثين طموحين',
+      sub2:"مراجع",
+      text: 'نظّم مراجعك، أنشئ قائمة مصادر، واستفد من أدوات الاستشهاد المتقدمة'
+    },
+    {
+      imgs: 'assets/images/hs2.png',
+      title: 'الدليل المرجعي للمصادر المرئية',
+      subtitle: 'الباحثين والمهتمين بالعلم والمعرفة',
+      sub2:"منصة",
+      text: 'اختر تخصصك، وابحث في مراجع مختارة بعناية لكل مستوى علمي'
     }
 
   ];
