@@ -23,7 +23,7 @@
                   <p class="text-dark lead text-center text-lg-end">{{ slide.text }}</p>
                   <div class="d-flex flex-row w-100 bg-white rounded-2 overflow-hidden">
                     <button (click)="onSearch()" class="btn w-25 mainBgColor text-white rounded-0 py-2">اقرأ الان</button>
-                    <input [(ngModel)]="searchQuery"  type="text" placeholder="ادخل اسم الكتاب" class="rounded-0 text-end form-control border-0 w-75">
+                    <input [(ngModel)]="searchQuery"  type="text" placeholder="ادخل اسم المرجع" class="rounded-0 text-end form-control border-0 w-75">
                     
                   </div>
                 </div>
@@ -38,7 +38,7 @@
 <section *ngIf="searchedBooks.length > 0" class="search-books-sec vstack gap-3 py-4">
   <div class="text-center lead">
     <h2 class="py-2 fs-1"><span class="border-3 border-bottom mainBorderColor">نتائج البحث</span></h2>
-    <p>عرض الكتب التي تطابق البحث</p>
+    <p>عرض المراجع التي تطابق البحث</p>
   </div>
 
   <div class="container">
@@ -58,7 +58,7 @@
              height="350" />
         </a>
         <p class="text-muted small mt-2 mb-1">{{ book.Category || 'غير مصنف' }}</p>
-        <a [href]="book.URL" class="text-decoration-none">
+        <a [href]="book.URL" class="text-decoration-none text-black">
           <h5 class="">{{ book.BookName }}</h5>
 
         </a>

@@ -1,6 +1,6 @@
 <section class="last-books-sec vstack gap-3 py-4">
     <div class="text-center lead">
-        <h2 class="py-2 fs-1"><span class="border-3 border-bottom mainBorderColor">استعرض اخر الكتب</span> </h2>
+        <h2 class="py-2 fs-1 lead"><span class="border-3 border-bottom mainBorderColor ">استعرض اخر المراجع</span> </h2>
         <p>القراءة تُساعدك على تطوير مهارات التواصل لديك</p>
     </div>
     <div>
@@ -22,7 +22,7 @@
                  height="350" />
             </a>
             <p class="text-muted small mt-2 mb-1">{{ book.Category || 'غير مصنف' }}</p>
-            <a [href]="book.URL" class="text-decoration-none"><h5 class="">{{ book.BookName }}</h5></a>
+            <a [href]="book.URL" class="text-decoration-none text-black"><h5 class="">{{ book.BookName }}</h5></a>
             <p class="text-muted">{{ book.AuthorName || 'مؤلف غير معروف' }}</p>
             <a [href]="book.YoutubeLink" *ngIf="book.YoutubeLink" class="text-danger fw-bold text-decoration-none">Visual Form</a>
           </div>
