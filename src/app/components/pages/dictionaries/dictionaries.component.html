@@ -12,7 +12,7 @@
         <div *ngIf="!isLoading" class="row flex-row-reverse row-cols-lg-4 row-cols-md-2 row-cols-sm-1 g-4">
           <!-- Book Loop -->
           <div *ngFor="let book of atlasBooks" class="col item text-end">
-            <a [href]="book.URL">
+            <a [href]="book.URL ? book.URL : book.YoutubeLink">
                 <img [src]="book.Image || 'assets/images/default-book.jpg'" 
                  [alt]="book.BookName" 
                  class="rounded-start-4 shadow bg-body-tertiary" 
@@ -20,7 +20,7 @@
                  height="350" />
             </a>
             <p class="text-muted small mt-2 mb-1">{{book.Category}}</p>
-            <a [href]="book.URL" class="text-decoration-none text-dark">
+            <a [href]="book.URL ? book.URL : book.YoutubeLink" class="text-decoration-none text-dark">
                 <h5 class="">{{ book.BookName }}</h5>
 
             </a>
