@@ -1,6 +1,8 @@
 <section class="py-5 mt-5 vstack gap-5">
     <div class="mainBgColor text-white py-4">
         <h1 class="text-center display-4 lead"><span class="">الأدلة</span></h1>
+                <p class="text-center lead fw-medium px-4">هي أدوات مرجعية تجمع معلومات عن أفراد، مؤسسات، أماكن، أو موضوعات متنوعة، وتُقدَّم بشكل منظم (عادة هجائي أو موضوعي)، لتسهيل الوصول إلى المعلومات الأساسية عنها</p>
+
     </div>
     <div class="container">
         <div *ngIf="isLoading" class="text-center">
@@ -25,6 +27,8 @@
 
             </a>
             <p class="text-muted">{{ book.AuthorName || 'مؤلف غير معروف' }}</p>
+                        <p>{{book.Description}}</p>
+
             <a [href]="book.YoutubeLink" 
                *ngIf="book.YoutubeLink" 
                target="_blank"

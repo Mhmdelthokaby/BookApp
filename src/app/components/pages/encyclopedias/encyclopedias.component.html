@@ -1,6 +1,7 @@
 <section class="py-5 mt-5 vstack gap-5">
     <div class="mainBgColor text-white py-4">
-        <h1 class="text-center display-4 lead"><span class="">موسوعات</span></h1>
+        <h1 class="text-center display-4 lead"><span class="">الموسوعات</span></h1>
+        <p class="text-center lead fw-medium ">كتب أو مصادر إلكترونية تحتوي على معلومات شاملة عن موضوعات متعددة، وغالبًا ما تكون مرتبة ترتيبًا أبجديًا</p>
     </div>
     <div class="container">
         <div *ngIf="isLoading" class="text-center">
@@ -25,6 +26,8 @@
 
             </a>
             <p class="text-muted">{{ book.AuthorName || 'مؤلف غير معروف' }}</p>
+                        <p>{{book.Description}}</p>
+
             <a [href]="book.YoutubeLink" 
                *ngIf="book.YoutubeLink" 
                target="_blank"

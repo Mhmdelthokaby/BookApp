@@ -24,6 +24,7 @@
             <p class="text-muted small mt-2 mb-1">{{ book.Category || 'غير مصنف' }}</p>
             <a [href]="book.URL ? book.URL : book.YoutubeLink" class="text-decoration-none text-black"><h5 class="">{{ book.BookName }}</h5></a>
             <p class="text-muted">{{ book.AuthorName || 'مؤلف غير معروف' }}</p>
+            <p >{{book.Description}}</p>
             <a [href]="book.YoutubeLink" *ngIf="book.YoutubeLink" class="text-danger fw-bold text-decoration-none">Visual Form</a>
           </div>
         </div>

@@ -16,6 +16,8 @@ export class LastBooksComponent implements OnInit {
   async ngOnInit() {
     try {
       this.latestBooks = await this.supabaseService.getLatestBooks();
+      console.log(this.latestBooks);
+      
     } catch (error) {
       console.error('Error fetching latest books:', error);
     } finally {

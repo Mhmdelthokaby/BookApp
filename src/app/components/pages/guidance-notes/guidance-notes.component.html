@@ -1,6 +1,7 @@
 <section class="py-5 mt-5 vstack gap-5">
     <div class="mainBgColor text-white py-4">
         <h1 class="text-center display-4 lead"><span class="">موجزات ارشادية</span></h1>
+        <p class="text-center lead fw-medium ">هو وثيقة او ملخص قصير يحتوي علي ارشادات وتوجيهات حول موضوع معين يقدم معلومات هامه بطريقه سهلة ومباشرة</p>
     </div>
     <div class="container">
         <div *ngIf="isLoading" class="text-center">
@@ -25,6 +26,8 @@
 
             </a>
             <p class="text-muted">{{ book.AuthorName || 'مؤلف غير معروف' }}</p>
+                        <p>{{book.Description}}</p>
+
             <a [href]="book.YoutubeLink" 
                *ngIf="book.YoutubeLink" 
                target="_blank"
